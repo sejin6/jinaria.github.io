@@ -1,1 +1,1 @@
-# jinaria.github.io
+# sejin6.github.io
