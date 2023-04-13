@@ -1,0 +1,15 @@
+@charset "UTF-8";
+.main {
+    background-color: green;
+}
+
+.header {
+    height: 100px;
+}
+
+.header .logo {
+    float: right;
+    background-color: red;
+    height: inherit;
+    width: 300px;
+}   
