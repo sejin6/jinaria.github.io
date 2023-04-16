@@ -1,7 +1,7 @@
 <template>
     <div class="nav">
         <ul>
-           <NavItem v-for="a in pages" v-bind:key="a" :msg="a" v-on:click="link()"></NavItem>
+           <NavItem v-for="page in pages" v-bind:key="page" :msg="page" v-on:click="link($event, page)"></NavItem>
         </ul>
     </div>
 </template>
@@ -15,18 +15,18 @@ import NavItem from './NavItem.vue';
         NavItem
     },
     props: {
-        pages:[]
-    },
-    methods: {
-        link: function() {
-            alert('clicked!');
-        }
+        pages: Array
     }
     
 })
 
 export default class Nav extends Vue {
-    pages!: []
+    pages!: Array<String>
+
+    link(event: Event, l:String)  {
+        console.log('clicked!');
+        this.$emit('moveToLink', event, l);
+    }
 }
 
 </script>
