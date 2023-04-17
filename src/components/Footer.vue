@@ -17,5 +17,6 @@ export default class Footer extends Vue {
 <style lang="scss" scoped>
     .footer {
         height: 80px;
+        text-align: center;
     }
 </style>

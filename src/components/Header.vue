@@ -21,13 +21,12 @@ export default class Header extends Vue {
 @import '../../static/common.scss';
     .header {
         font-size: 32px;
-        text-align: right;
+        text-align: center;
         vertical-align:baseline;
-        padding: 20px 20px 0 0;
+        padding: 40px 0 80px 0;
         height: 80px;
         color: $text-color;
         font-family: cursive;
-        border-bottom: $border-color solid 2px;
         font-weight: bold;
     }
 </style>

@@ -1,5 +1,5 @@
 
 export default interface Page {
-    title:String;
-
+    title: String;
+    contents: String;
 }

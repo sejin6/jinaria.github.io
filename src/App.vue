@@ -1,9 +1,7 @@
 <template>
   <Header></Header>
-  <div class="content">
-    <Nav :pages="pages" @moveToLink="moveToLink"></Nav>
-    <Main :msg="currentPage"></Main>
-  </div>
+  <Nav :pages="pages" @moveToLink="moveToLink" :currentPage="currentPage"></Nav>
+  <Main :currentPage="currentPage"></Main>
   <Footer></Footer>
 </template>
 
@@ -25,21 +23,37 @@ import Page from './components/pages/Page';
   },
   data() {
     return {
-      pages: [
-        '게시판', '방명록'
-      ],
-      currentPage: '게시판'
+      pages: getPageList(),
+      currentPage: {
+        title: '자기소개',
+        contents: '저는 진승기입니다.'
+      }
     }
   }
 })
 export default class App extends Vue {
   pages!: Array<Page>
-  currentPage!: String
-  moveToLink(event: Event, link: String) {
-    console.log(`say ${link}`);
+  currentPage!: Page
+  moveToLink(event: Event, link: Page) {
+    console.log(`say ${link.title}`);
     this.currentPage = link;
   }
+  
 }
+
+function getPageList(): Page[] {
+  return [
+    {
+      title: '자기소개',
+      contents: '저는 진승기입니다.'
+    },
+    {
+      title: '역사',
+      contents: '95년생'
+    }
+  ];
+}
+
 </script>
 
 <style lang="scss">
@@ -56,14 +70,9 @@ html {
   font-size: 14px;
   position: relative;
   height:100%;
-  background: no-repeat url('../static/milkyway.jpg');
-  background-size: 100% 100%;
- 
-  .content {
-    display: flex;
-    height: calc(100% - 160px);
-    border-bottom: 1px solid $border-color;
-  }
+
+  border-bottom: 1px solid $border-color;
+  
   
   
 }

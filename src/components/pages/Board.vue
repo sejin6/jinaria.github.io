@@ -8,14 +8,13 @@ import { Options,  Vue } from 'vue-class-component';
 import Page from './Page'
 
 @Options({
-    props: {
-        title:String
-    },
+    props: ['title'],
     
 })
 
 export default class Board extends Vue implements Page {
-    title!:String
+    title!: String
+    contents!: String
 }
 </script>
 <style lang="scss" scoped>

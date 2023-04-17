@@ -1,23 +1,30 @@
 <template>
-    <div class="main">{{ msg }}</div>
+    <div class="main">
+        <h1>{{ currentPage.title }}</h1>
+        <div class="contents">
+            {{ currentPage.contents }}
+        </div>
+    </div>
 </template>
 
 <script lang="ts">
+import Page from './pages/Page';
 import {Vue, Options} from 'vue-class-component';
 
 @Options({
-  props: {
-    msg: String
-  }
+  props: ['currentPage']
 })
 
 export default class Main extends Vue {
-    msg!: string
+
+    currentPage!: Page
 }
 </script>
 
 <style scoped>
     .main {
-        
+        text-align: center;
+        height: 800px;
+        margin-top: 48px;
     }
 </style>
