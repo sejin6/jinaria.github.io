@@ -26,5 +26,6 @@ export default class Main extends Vue {
         text-align: center;
         height: 800px;
         margin-top: 48px;
+        border-bottom: 1px solid #eee;
     }
 </style>

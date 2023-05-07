@@ -24,7 +24,7 @@ export default class Nav extends Vue {
     currentPage!: Page
 
     link(event: Event, l:Page)  {
-        console.log('clicked!');
+
         this.$emit('moveToLink', event, l);
     }
 }

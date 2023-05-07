@@ -12,6 +12,7 @@ import Nav from './components/Nav.vue';
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import Page from './components/pages/Page';
+import menus from './components/pages/menus.json';
 
 
 @Options({
@@ -24,10 +25,7 @@ import Page from './components/pages/Page';
   data() {
     return {
       pages: getPageList(),
-      currentPage: {
-        title: '자기소개',
-        contents: '저는 진승기입니다.'
-      }
+      currentPage: menus.intro
     }
   }
 })
@@ -41,17 +39,8 @@ export default class App extends Vue {
   
 }
 
-function getPageList(): Page[] {
-  return [
-    {
-      title: '자기소개',
-      contents: '저는 진승기입니다.'
-    },
-    {
-      title: '역사',
-      contents: '95년생'
-    }
-  ];
+function getPageList(): any {
+  return menus;
 }
 
 </script>
@@ -59,9 +48,6 @@ function getPageList(): Page[] {
 <style lang="scss">
 @import '../static/common.scss';
 
-html {
-  height:100%;
-}
 #app {
   padding: 0;
   margin: 0;
@@ -70,8 +56,6 @@ html {
   font-size: 14px;
   position: relative;
   height:100%;
-
-  border-bottom: 1px solid $border-color;
   
   
   
